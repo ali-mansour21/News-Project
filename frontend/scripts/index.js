@@ -1,4 +1,4 @@
-const addNewsForm = $("#news-form");
+const addNewsForm = $("#addNews");
 const newsTitle = $("#newsTitle");
 const newsContent = $("#newsContent");
 const newsImage = $("#newsImage");
@@ -16,7 +16,6 @@ const getNew = async () => {
     });
   } catch (error) {}
 };
-getNew();
 const generateNew = (element) => {
   const { id, title, description, news_image } = element;
   return `  <div class="card mb-3">
@@ -34,3 +33,30 @@ const generateNew = (element) => {
             </div>
           </div>`;
 };
+
+const addNews = async () => {
+  try {
+    const newsForm = new FormData();
+    newsForm.append("title", newsTitle.val());
+    newsForm.append("description", newsContent.val());
+    newsForm.append("news_image", $("#newsImage")[0].files[0]);
+    const resposne = await axios.post(
+      "http://localhost/news-project/backend/addNews.php",
+      newsForm
+    );
+    console.log(resposne);
+    getNew();
+    newsTitle.val("");
+    newsContent.val("");
+    newsImage.val("");
+  } catch (error) {
+    console.log(error);
+  }
+};
+addNewsForm.submit((e) => {
+  e.preventDefault();
+  addNews();
+});
+$(document).ready(function () {
+  getNew();
+});
