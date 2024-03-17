@@ -22,7 +22,7 @@ const generateNew = (element) => {
             <img
               src="${news_image}"
               class="card-img-top img-thumbnail-sm image-size"
-              alt="..."
+              alt="newsImage"
             />
             <div class="card-body">
               <h5 class="card-title">${title}</h5>
@@ -44,7 +44,6 @@ const addNews = async () => {
       "http://localhost/news-project/backend/addNews.php",
       newsForm
     );
-    console.log(resposne);
     getNew();
     newsTitle.val("");
     newsContent.val("");
