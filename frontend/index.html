@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -44,22 +45,7 @@
     <div class="container mt-5">
       <h2>Latest News</h2>
       <div class="row mt-4">
-        <div class="col-md-8">
-          <div class="card mb-3">
-            <img
-              src="https://via.placeholder.com/800x400"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">News Title</h5>
-              <p class="card-text">
-                This is a short description of the news article. It provides a
-                brief overview of what the article is about.
-              </p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
+        <div class="col-md-8" id="newsContainer">
         </div>
         <div class="col-md-4">
           <div class="card">
@@ -99,5 +85,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
